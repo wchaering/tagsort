@@ -1,0 +1,29 @@
+.tagsort-tags-container span {
+	display: inline-block;
+	border: 2px solid #CCC;
+	color: #AAA;
+	font-size: 12px;
+	line-height: 10px;
+	padding: 5px 9px;
+	margin: 5px;
+	cursor: pointer;
+	border-radius: 12px 12px 12px 12px;
+	-moz-border-radius: 12px 12px 12px 12px;
+	-webkit-border-radius: 12px 12px 12px 12px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.tagsort-tags-container span:hover {
+	border: 2px solid #000;
+	color: #FFF;
+	background-color: #000;
+
+}
+.tagsort-tags-container span.tagsort-active {
+	border: 2px solid #000;
+	color: #000;
+	background-color: transparent;
+}
