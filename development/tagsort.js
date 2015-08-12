@@ -2,6 +2,7 @@
   $.fn.tagSort = function(options) {
       var defaults = {
         selector: '.item-tagsort',
+        tagWrapper: 'span',
         displaySelector: false,
         displaySeperator: ' ',
         inclusive: false, 
@@ -13,18 +14,18 @@
         generateTags: function(elements) {
           var tags_inclusive = {};
           var tags_exclusive = {elements: [], tags: []};
+          var tagElement = $(document.createElement(options.tagWrapper));
           elements.each(function(i){
             $element = $(this)
             ;
             var tagsData = $element.data('item-tags'),
             elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
-
+            
             $.each(elementTags, function(i, v){
               var tagName = v.toLowerCase();
               if(!tags_inclusive[tagName]){
                 tags_inclusive[tagName] = [];
-                tagSortEngine.container.append('<span>'+v+'</span>');
-
+                tagSortEngine.container.append(tagElement.clone().text(v));
               }
               if(options.displaySelector !== false){
                 $element.find(options.displaySelector).append(i > 0 ? options.displaySeperator + v : v);
@@ -69,7 +70,7 @@
           tagSortEngine.container.addClass('tagsort-tags-container');
           var elements = $(options.selector);
           tagSortEngine.tags = tagSortEngine.generateTags(elements, tagSortEngine.container);
-          var tagElement = tagSortEngine.container.find('span');
+          var tagElement = tagSortEngine.container.find(options.tagWrapper);
           tagElement.click(function(){
             $(this).toggleClass('tagsort-active');
             if(!tagElement.hasClass('tagsort-active')){
