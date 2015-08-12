@@ -57,7 +57,7 @@
         },
         inclusiveSort: function(tags, elements){
           var display = [[],[]]
-          $container.find('.tagsort-active').each(function(i){
+          tagSortEngine.container.find('.tagsort-active').each(function(i){
             $.each(tags[$(this).text().toLowerCase()],function(element_key, element){
               display[1].push(element);
 
