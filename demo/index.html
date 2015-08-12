@@ -18,6 +18,14 @@
 			width: 80%;
 			margin: 0 auto;
 		}
+		h1 > small a {
+			color: #AAA;
+			text-decoration: none;
+			font-size: 70%;
+		}
+		h1 > small a:hover {
+			color: #000;
+		}
 		.item {
 			box-sizing: border-box;
 			float: left;
@@ -60,8 +68,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Tagsort</h1>
-		<h3>A jQuery plugin for data-based DOM element sorting using tags</h3>
+		<h1>Tagsort <small><a href="http://wch.io/projects/tagsort">View the docs &rarr;</a></small></h1>
+		<h3>A jQuery plugin for data-based DOM element sorting via tags</h3>
 		<div class="tags-container row"></div>
 		<div class="item col-md-3" data-item-id="1" data-item-tags="PHP,JavaScript,React,Memcached,RocksDB,Cassandra,Flux">
 			<div class="wrapper">
