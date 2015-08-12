@@ -54,9 +54,7 @@
 	<script src="scripts/tagsort.min.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 	$(function(){
-		// Inclusive = when multiple tags are selected, all elements that contain ANY of those tags will be shown
-		// Exclusive = when multiple tags are selected, only elements that contain ALL of those tags will be shown
-		$('div.tags-container').tagSort({selector:'.item',tagWrapper:'span',displaySelector: '.item-tags', displaySeperator: ' / ', inclusive: false, fadeTime:200});
+		$('div.tags-container').tagSort({selector:'.item', tagWrapper:'span', displaySelector: '.item-tags', displaySeperator: ' / ', inclusive: false, fadeTime:200});
 	});
 	</script>
 </head>
@@ -152,20 +150,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
