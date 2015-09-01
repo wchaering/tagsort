@@ -1,6 +1,7 @@
 # jQuery Tagsort plugin
 A plugin that uses HTML5 data attributes to dynamically create interactive tags that can be used to filter and sort a set of tagged elements.
 
+A demo and options to download different versions of the plugin are avaliable [here](http://wch.io/projects/tagsort/ "Title")
 
 Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element `.tagSort({options...})` is called on. Tagsort has two filtering options, inclusive and exclusive. Inclusive means that when multiple tags are active, all elements that contain ANY of those tags will be shown. While exclusive means that when multiple tags are active, only elements that contain ALL of those tags will be shown.
 
