@@ -38,7 +38,8 @@ Tagsort can be used easily by just passing in an item selector, but it also offe
 **`selector` (Required, fallback: `.item-tagsort`)**
 
 The class or element selector tagsort will use to identify tagged items to sort.
-Example Values: `.tagged-item` or `div.item-tagsort`  
+Example Values: `.tagged-item` or `div.item-tagsort`
+
 
 **`tagWrapper` (Optional, default: `span`)**
 
