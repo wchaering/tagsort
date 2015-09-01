@@ -35,19 +35,16 @@ $('div.tagsort-tags-container').tagSort({
 Tagsort can be used easily by just passing in an item selector, but it also offers some extra options for added functionality.
 
 
-
-**`selector` (Required, fallback: `.item-tagsort`)**
+#####**`selector` (Required, fallback: `.item-tagsort`)**
 
 The class or element selector tagsort will use to identify tagged items to sort.
 Example Values: `.tagged-item` or `div.item-tagsort`
 
 
-
-**`tagWrapper` (Optional, default: `span`)**
+#####**`tagWrapper` (Optional, default: `span`)**
 
 The HTML element used to wrap the tag as they are appended to the element .tagSort({options...}) was called on.
 Example Values: `li` or `p` or `a`
-
 
 
 **`displaySelector` (Optional, default: `false`)**
@@ -56,19 +53,16 @@ The selector tagsort will use to display a filtered element's tags in. Use false
 Example Values: `.tagged-item .tagged-item-tags` or `div.item-tagsort > .tags`
 
 
-
 **`displaySeperator` (Optional, default: `' '`)**
 
 The character or HTML tagsort will add between the tags displayed in the element referenced by displaySelector.
 Example Values: `/` or `·` or `<span>&</span>`
 
 
-
 **`inclusive` (Optional, default: `false`)**
 
 Choose weather to use inclusive or exclusive filtering. Defaults to exclusive (inclusive = false).
 Example Values:```true``` or ```false```
-
 
 
 **`fadeTime` (Optional, default: `200`)**
