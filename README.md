@@ -6,6 +6,10 @@ Tagsort provides dynamic tag-based element filtering using data attributes to pr
 
 
 
+
+
+
+
 ###Basic Usage
 Tagsort uses a user-defined data-attribute containing a comma-separated list of tags for the element. The data attribute used is data-item-tags="" and must be added to each element with the selector passed to tagsort as an option.
 
@@ -28,6 +32,12 @@ $('div.tagsort-tags-container').tagSort({
 <div class="item-to-tag" data-item-tags="tag1,tag2,tag4">Sit</div>
 <div class="item-to-tag" data-item-tags="tag3,tag4">Amet</div>
 ```
+
+
+
+
+
+
 
 
 
@@ -63,6 +73,11 @@ Example Values:```true``` or ```false```
 ```fadeTime``` (Optional, default: ```200```)
 The time (in milliseconds) for elements to fade out and in as they are sorted. Use 0 for no fading.
 Example Values: ```100``` or ```400```
+
+
+
+
+
 
 
 
