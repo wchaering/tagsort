@@ -77,3 +77,4 @@ Example Values: `100` or `400`
 
 ###Todo
 * Add single-select option
+* Smoother handling of sorts where no elements match
