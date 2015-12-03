@@ -1,0 +1,27 @@
+{
+  "name": "tagsort",
+  "version": "1.0.0",
+  "homepage": "http://wch.io/projects/tagsort/",
+  "authors": [
+    "Will Haering <wchaering@gmail.com>"
+  ],
+  "description": "Filter any set of tagged elements easily.",
+  "main": "src/js/tagsort.js",
+  "keywords": [
+    "filter",
+    "jquery",
+    "tags",
+    "sorting"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests",
+    "node_modules"
+  ],
+  "moduleType": [
+    "es6"
+  ]
+}
