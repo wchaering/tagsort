@@ -64,7 +64,7 @@ Example Values: `/` or `·` or `<span>&</span>`
   
 **`sortType` (Optional, default: `'exclusive'`)**
 
-Choose the way Tagsort will handle user tag selections and subsequent element sorting.
+Choose the way Tagsort will handle user tag selections and subsequent element filtering.
 Example Values:```exclusive``` or ```inclusive``` or ```single```
   
   
