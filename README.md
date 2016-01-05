@@ -4,9 +4,8 @@ A plugin that uses HTML5 data attributes to dynamically create interactive tags 
 A demo and options to download different versions of the plugin are avaliable [here](http://wch.io/projects/tagsort/ "Tagsort Demo").
 
 
-
 ###Description
-Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element `.tagSort({options...})` is called on. Tagsort has two filtering options, inclusive and exclusive. Inclusive means that when multiple tags are active, all elements that contain ANY of those tags will be shown. While exclusive means that when multiple tags are active, only elements that contain ALL of those tags will be shown.
+Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element `.tagSort({options...})` is called on. Tagsort has three ways to filter elements, exclusive, inclusive, and single. Inclusive means that when multiple tags are active, all elements that contain ANY of those tags will be shown. Exclusive means that when multiple tags are active, only elements that contain ALL of those tags will be shown. Single only allows one tag to be selected at a time and shows all elements that match.
 
 
 
@@ -53,7 +52,8 @@ Example Values: `li` or `p` or `a`
   
 **`displaySelector` (Optional, default: `false`)**
 
-The selector tagsort will use to display a filtered element's tags in. Use false for no item-specific tag display.Example Values: `.tagged-item .tagged-item-tags` or `div.item-tagsort > .tags`
+The selector tagsort will use to display a filtered element's tags in. Use false for no item-specific tag display.
+Example Values: `.tagged-item .tagged-item-tags` or `div.item-tagsort > .tags`
   
   
 **`displaySeperator` (Optional, default: `' '`)**
@@ -62,10 +62,10 @@ The character or HTML tagsort will add between the tags displayed in the element
 Example Values: `/` or `·` or `<span>&</span>`
   
   
-**`inclusive` (Optional, default: `false`)**
+**`sortType` (Optional, default: `'exclusive'`)**
 
-Choose weather to use inclusive or exclusive filtering. Defaults to exclusive (inclusive = false).
-Example Values:```true``` or ```false```
+Choose the way Tagsort will handle user tag selections and subsequent element sorting.
+Example Values:```exclusive``` or ```inclusive``` or ```single```
   
   
 **`fadeTime` (Optional, default: `200`)**
@@ -76,5 +76,5 @@ Example Values: `100` or `400`
 
 
 ###Todo
-* Add single-select option
-* Smoother handling of sorts where no elements match
+* Clean up element display on sort (less flashing in and out)
+* Smoother handling of sorts where no elements match (similar to above)
