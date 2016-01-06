@@ -5,7 +5,7 @@ A demo and options to download different versions of the plugin are avaliable [h
 
 
 ###Description
-Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element `.tagSort({options...})` is called on. Tagsort has three ways to filter elements, exclusive, inclusive, and single. Inclusive means that when multiple tags are active, all elements that contain ANY of those tags will be shown. Exclusive means that when multiple tags are active, only elements that contain ALL of those tags will be shown. Single only allows one tag to be selected at a time and shows all elements that match.
+Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element `.tagSort({options...})` is called on. Tagsort has three ways to filter elements, exclusive, inclusive, and single. Inclusive filtering will display all elements that have any of the active tags. Exclusive filtering will display only the elements that have every active tag. Single filtering only allows one tag to be selected at a time and shows all elements that match.
 
 
 
