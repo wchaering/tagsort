@@ -76,5 +76,6 @@ Example Values: `100` or `400`
 
 
 ###Todo
+* Prevent exclusive filter from showing no elements
 * Clean up element display on sort (less flashing in and out)
 * Smoother handling of sorts where no elements match (similar to above)
