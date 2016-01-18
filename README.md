@@ -46,10 +46,16 @@ Example Values: `.tagged-item` or `div.item-tagsort`
 
 **`tagWrapper` (Optional, default: `span`)**
 
-The HTML element used to wrap the tag as they are appended to the element .tagSort({options...}) was called on.
+The HTML element used to wrap the tag text when they are appended to the element .tagSort({options...}) was called on.
 Example Values: `li` or `p` or `a`
-  
-  
+
+
+**`tagClassPrefix` (Optional, default: `false`)**
+
+Give each tag element a class comprised of the defined prefix and the text of the tag (Ex. `color-red`). If `false`, no classes will be added. If a blank string is passed, Tagsort will add classes with no prefix.
+Example Values: `false` or `tagsort-` or `color-`
+
+
 **`displaySelector` (Optional, default: `false`)**
 
 The selector tagsort will use to display a filtered element's tags in. Use false for no item-specific tag display.
