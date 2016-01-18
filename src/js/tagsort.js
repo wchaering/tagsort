@@ -36,7 +36,6 @@
                 tags_inclusive[tagName] = [];
                 //Add tag name as class to each tag element with optional prefix if the user sets tagClass = true
                 tagSortEngine.container.append(options.tagClassPrefix !== false ? tagElement.clone().text(v).addClass((options.tagClassPrefix + v.toLowerCase()).replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '')) : tagElement.clone().text(v));
-
               }
               // Append tags to the element if they should be displayed
               if(options.displaySelector !== false){
