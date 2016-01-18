@@ -63,7 +63,7 @@
 	<script src="scripts/tagsort.min.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 	$(function(){
-		$('div.tags-container').tagSort({selector:'.item', tagWrapper:'span', displaySelector: '.item-tags', displaySeperator: ' / ', sortType: 'exclusive', fadeTime:200});
+		$('div.tags-container').tagSort({selector:'.item', tagWrapper:'span', tagClassPrefix:'tagsort-', displaySelector: '.item-tags', displaySeperator: ' / ', sortType: 'exclusive', fadeTime:200});
 	});
 	</script>
 </head>
