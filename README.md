@@ -38,11 +38,13 @@ $('div.tagsort-tags-container').tagSort({
 Tagsort can be used easily by just passing in an item selector, but it also offers some extra options for added functionality.
 
 
+
 **`selector` (Required, fallback: `.item-tagsort`)**
 
 The class or element selector tagsort will use to identify tagged items to sort.
 
 Example Values: `.tagged-item` or `div.item-tagsort`
+
 
 
 **`tagWrapper` (Optional, default: `span`)**
@@ -52,6 +54,7 @@ The HTML element used to wrap the tag text when they are appended to the element
 Example Values: `li` or `p` or `a`
 
 
+
 **`tagClassPrefix` (Optional, default: `false`)**
 
 Give each tag element a class comprised of the defined prefix and the text of the tag (Ex. `color-red`). If `false`, no classes will be added. If a blank string is passed, Tagsort will add classes with no prefix.
@@ -59,12 +62,14 @@ Give each tag element a class comprised of the defined prefix and the text of th
 Example Values: `false` or `tagsort-` or `color-`
 
 
+
 **`displaySelector` (Optional, default: `false`)**
 
 The selector tagsort will use to display a filtered element's tags in. Use false for no item-specific tag display.
 
 Example Values: `.tagged-item .tagged-item-tags` or `div.item-tagsort > .tags`
-  
+
+
   
 **`displaySeperator` (Optional, default: `' '`)**
 
@@ -78,13 +83,15 @@ Example Values: `/` or `·` or `<span>&</span>`
 Choose the way Tagsort will handle user tag selections and subsequent element filtering.
 
 Example Values:```exclusive``` or ```inclusive``` or ```single```
-  
+
+
   
 **`fadeTime` (Optional, default: `200`)**
 
 The time (in milliseconds) for elements to fade out and in as they are sorted. Use 0 for no fading.
 
 Example Values: `100` or `400`
+
 
 
 
