@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tagsort Demo</title>
+	<!-- Demo Styles -->
+	<style>
+		html,body {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #FFF;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   			font-weight: 300;
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+		h1 > small a {
+			color: #AAA;
+			text-decoration: none;
+			font-size: 70%;
+			margin-left: 10px;
+		}
+		h1 > small a:hover {
+			color: #000;
+		}
+		.item {
+			box-sizing: border-box;
+			float: left;
+			position: relative;
+		    min-height: 1px;
+		    padding-left: 15px;
+		    padding-right: 15px;
+		    width: 20%;
+		    margin-bottom: 40px;
+		    height: 260px;
+		    max-height: 360px;
+		    overflow: hidden;
+
+
+		}
+
+		.item .wrapper {
+			background-color: #f4f4f4;
+			height: 280px;
+			padding: 8px;
+		}
+		.item .wrapper img {
+			width: 100%;
+		}
+		.item .wrapper h2 {
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: normal;
+			margin: 5px 0;
+		}
+		.item .wrapper .item-tags {
+			color: #AAA;
+			font-size: 12px;
+			line-height: 1.8;
+		}
+		.tagsort-tags-container {
+			margin: 40px 0;
+		}
+		.tagsort-tags-container span {
+			color: transparent;
+			height: 50px;
+			width: 50px;
+		}
+		.color-blue {
+			background-color: #0074D9;
+		}
+		.color-brown {
+			background-color: #8B4513;
+		}
+		.color-red {
+			background-color: #FF4136;
+		}
+		.color-green {
+			background-color: #2ECC40;
+		}
+		.color-orange {
+			background-color: #FF851B;
+		}
+		.color-purple {
+			background-color: #B10DC9;
+		}
+	</style>
+	<link href="styles/tagsort.min.css" rel="stylesheet" type="text/css"></link>
+	<script src="scripts/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/tagsort.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	$(function(){
+		$('div.tags-container').tagSort({selector:'.item', tagWrapper:'span', tagClassPrefix:'color-', displaySelector: '.item-tags', displaySeperator: ' / ', sortType: 'single', fadeTime:200});
+	});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Tagsort <small><a href="http://wch.io/projects/tagsort">View the docs &rarr;</a></small></h1>
+		<h3>A jQuery plugin for data-based DOM element filtering via tags</h3>
+		<div class="tags-container row"></div>
+		<div class="item col-md-3" data-item-id="1" data-item-tags="Blue">
+			<div class="wrapper">
+				<img src="images/blue1.jpg" alt="Facebook">
+				<h2>Blue Arrow Frog</h2>
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="2" data-item-tags="Red">
+			<div class="wrapper">
+				<img src="images/red1.jpg" alt="Cardinal">
+				<h2>Cardinal</h2>
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="3" data-item-tags="Green">
+			<div class="wrapper">
+				<img src="images/green1.jpg" alt="Iguana">
+				<h2>Iguana</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="4" data-item-tags="Purple">
+			<div class="wrapper">
+				<img src="images/purple1.jpg" alt="Violet-Backed Starling">
+				<h2>Violet Starling</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="5" data-item-tags="Brown">
+			<div class="wrapper">
+				<img src="images/brown1.jpg" alt="Brown Bear">
+				<h2>Brown Bear</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="6" data-item-tags="Brown">
+			<div class="wrapper">
+				<img src="images/brown2.jpg" alt="Beaver">
+				<h2>Beaver</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="7" data-item-tags="Blue">
+			<div class="wrapper">
+				<img src="images/blue2.jpg" alt="Parrot">
+				<h2>Parrot</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="8" data-item-tags="Red">
+			<div class="wrapper">
+				<img src="images/red2.jpg" alt="Beta Fish">
+				<h2>Beta Fish</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="9" data-item-tags="Green">
+			<div class="wrapper">
+				<img src="images/green2.jpg" alt="Parrot">
+				<h2>Parrot</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="10" data-item-tags="Blue">
+			<div class="wrapper">
+				<img src="images/blue3.jpg" alt="Blue Tang">
+				<h2>Blue Tang</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="11" data-item-tags="Orange">
+			<div class="wrapper">
+				<img src="images/orange1.jpg" alt="Clownfish">
+				<h2>Clownfish</h2>
+
+			</div>
+		</div>
+		<div class="item col-md-3" data-item-id="12" data-item-tags="Green">
+			<div class="wrapper">
+				<img src="images/green3.jpg" alt="Tree Frog">
+				<h2>Tree Frog</h2>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
