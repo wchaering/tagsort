@@ -1,3 +1,5 @@
+/* NOT REQUIRED */
+/* Just some example CSS */
 .tagsort-tags-container span {
 	display: inline-block;
 	border: 2px solid #CCC;
@@ -15,7 +17,6 @@
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
-
 .tagsort-tags-container span:hover {
 	border: 2px solid #000;
 	color: #FFF;
