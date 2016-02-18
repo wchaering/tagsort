@@ -1,0 +1,27 @@
+{
+  "name": "tagsort",
+  "version": "1.4.0",
+  "description": "A jQuery plugin for dynamic element filtering using HTML5 data attributes",
+  "main": "tagsort.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wchaering/tagsort.git"
+  },
+  "keywords": [
+    "filter",
+    "sort",
+    "tagsort",
+    "data-attributes",
+    "data",
+    "tags"
+  ],
+  "author": "Will Haering",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wchaering/tagsort/issues"
+  },
+  "homepage": "https://github.com/wchaering/tagsort#readme"
+}
