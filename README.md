@@ -12,7 +12,7 @@ Tagsort takes a set of tagged elements allows them to be filtered in a number of
 Tagsort uses a user-defined data-attribute containing a comma-separated list of tags to tag each element. The data attribute used is `data-item-tags=""` and must be added to each element to be filtered.
 
 
-#####Markup:
+Markup
 ```html
 <div class="tagsort-tags-container"></div>
 
@@ -24,14 +24,14 @@ Tagsort uses a user-defined data-attribute containing a comma-separated list of 
 ```
 
 
-#####JavaScript:
+JavaScript
 ```javascript
 $('div.tagsort-tags-container').tagSort({
   items:'.item-to-filter'
 });
 ```
 
-#####JavaScript with Options:
+JavaScript with Options
 ```javascript
 $('div.tagsort-tags-container').tagSort({
   items: '.item-tagsort',
