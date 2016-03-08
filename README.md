@@ -56,46 +56,49 @@ The class or selector used to identify tagged items.
 
 Example Values: ```.tagged-item``` or ```div.item-tagsort```
 
-
+===
 **`tagElement` (Optional, default: `span`)**
 
 The HTML element used for the tags added to the container.
 
 Example Values: ```li``` or ```p``` or ```a```
 
-
+===
 **`tagClassPrefix` (Optional, default: `false`)**
 
 Used to provide a prefix for the selectable tags' classes to make CSS simpler. Classes will be added as the prefix + the tagname. If false, no classes will be added.
 
 Example Values: ```false``` or ```tagsort-``` or ```color-```
 
-
+===
 **`itemTagsView` (Optional, default: `false`)**
 
 Provide a selector that Tagsort will append each elements' individual tags to. Use ```false``` for no element tag display.
 
 Example Values: ```.tagged-item .tagged-item-tags``` or ```div.item-tagsort > .tags```
 
+===
 **`itemTagsSeperator` (Optional, default: `' '`)**
 
 The character or HTML Tagsort will insert between the tags displayed in the element's tag display referenced by `displaySelector`.
 
 Example Values: ```/``` or ```·``` or ```<span>&</span>```
 
+===
 **`itemTagsElement` (Optional, default: `false`)**
 
 Allows item tags shown to be wrapped with HTML elements instead of a seperator.
 
 Example Values: ```b``` or ```i```
 
+===
 **`sortType` (Optional, default: `'exclusive'`)**
 
 Choose the way Tagsort will handle element filtering.
 
 Example Values:```exclusive``` or ```inclusive``` or ```single```
 
-
+===
 **`fadeTime` (Optional, default: `200`)**
 
 The time (in milliseconds) for filtered elements to fade in and out. 0 removes transition entirely.
