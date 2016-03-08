@@ -1,78 +1,97 @@
 # jQuery Tagsort plugin
-A plugin that uses HTML5 data attributes to dynamically create interactive tags that can be used to filter and sort a set of tagged elements.
+A plugin that uses HTML5 data attributes to dynamically create interactive tags that can be used to filter a set of tagged elements.
 
-A demo and options to download different versions of the plugin are avaliable [here](http://wch.io/projects/tagsort/ "Tagsort Demo").
+Demos and docs for the plugin are avaliable [here](http://wch.io/projects/tagsort/ "Tagsort Demo").
 
 
 ###Description
-Tagsort provides dynamic tag-based element filtering using data attributes to produce tags for a specified set of elements and append those sort tags to the tagsort element the `$.tagSort(options)` function is called on. Tagsort has three ways to filter elements: inclusive, exclusive, and single. Inclusive filtering will display all elements that have any of the active tags. Exclusive filtering will display only the elements that have every active tag. Single filtering only allows one tag to be selected at a time and shows all elements that match.
+Tagsort takes a set of tagged elements allows them to be filtered in a number of ways. The set of tags is appended to an element and can be selected to inclusively or exclusively show matching elements. Inclusive filtering will show all elements that have any of the selected tags. Exclusive filtering will only show elements that have all of the selected tags. Single filtering will only allow one tag at a time to be selected and show the elements that match that tag.
 
 
 ###Basic Usage
-Tagsort uses a user-defined data-attribute containing a comma-separated list of tags for the element. The data attribute used is `data-item-tags=""` and must be added to each element with the selector passed to tagsort as an option.
-
-
-#####JavaScript:
-```javascript
-$('div.tagsort-tags-container').tagSort({
-  selector:'.item-to-tag'
-});
-```
+Tagsort uses a user-defined data-attribute containing a comma-separated list of tags to tag each element. The data attribute used is `data-item-tags=""` and must be added to each element to be filtered.
 
 
 #####Markup:
 ```html
 <div class="tagsort-tags-container"></div>
 
-<div class="item-to-tag" data-item-tags="tag1,tag3,tag4">Lorem</div>
-<div class="item-to-tag" data-item-tags="tag2,tag3,tag4">Ipsum</div>
-<div class="item-to-tag" data-item-tags="tag1,tag2">Dolor</div>
-<div class="item-to-tag" data-item-tags="tag1,tag2,tag4">Sit</div>
-<div class="item-to-tag" data-item-tags="tag3,tag4">Amet</div>
+<div class="item-to-filter" data-item-tags="tag1,tag3,tag4">Lorem</div>
+<div class="item-to-filter" data-item-tags="tag2,tag3,tag4">Ipsum</div>
+<div class="item-to-filter" data-item-tags="tag1,tag2">Dolor</div>
+<div class="item-to-filter" data-item-tags="tag1,tag2,tag4">Sit</div>
+<div class="item-to-filter" data-item-tags="tag3,tag4">Amet</div>
+```
+
+
+#####JavaScript:
+```javascript
+$('div.tagsort-tags-container').tagSort({
+  items:'.item-to-filter'
+});
+```
+
+#####JavaScript with Options:
+```javascript
+$('div.tagsort-tags-container').tagSort({
+  items: '.item-tagsort',
+  tagElement: 'span',
+  tagClassPrefix: false,
+  itemTagsView: false,
+  itemTagsSeperator: ' ',
+  itemTagsElement: false,
+  sortType: 'exclusive',
+  fadeTime: 0
+});
 ```
 
 
 ###Options:
-Tagsort can be used easily by just passing in an item selector, but it also offers some extra options for added functionality.
+Tagsort can be used simply by passing in a sort item selector but it also offers some extra options for added functionality.
 
 
-**`selector` (Required, fallback: `.item-tagsort`)**
+**`items` (Required, fallback: `.item-tagsort`)**
 
-The class or element selector tagsort will use to identify tagged items to sort.
+The class or selector used to identify tagged items.
 
-Example Values: `.tagged-item` or `div.item-tagsort`
+Example Values: ```.tagged-item``` or ```div.item-tagsort```
 
 
-**`tagWrapper` (Optional, default: `span`)**
+**`tagElement` (Optional, default: `span`)**
 
-The HTML element used to wrap the tag text when they are appended to the element .tagSort({options...}) was called on.
+The HTML element used for the tags added to the container.
 
-Example Values: `li` or `p` or `a`
+Example Values: ```li``` or ```p``` or ```a```
 
 
 **`tagClassPrefix` (Optional, default: `false`)**
 
-Give each tag element a class comprised of the defined prefix and the text of the tag (Ex. `color-red`). If `false`, no classes will be added. If a blank string is passed, Tagsort will add classes with no prefix.
+Used to provide a prefix for the selectable tags' classes to make CSS simpler. Classes will be added as the prefix + the tagname. If false, no classes will be added.
 
-Example Values: `false` or `tagsort-` or `color-`
-
-
-**`displaySelector` (Optional, default: `false`)**
-
-The selector tagsort will use to display a filtered element's tags in. Use false for no item-specific tag display.
-
-Example Values: `.tagged-item .tagged-item-tags` or `div.item-tagsort > .tags`
+Example Values: ```false``` or `tagsort-``` or ```color-```
 
 
-**`displaySeperator` (Optional, default: `' '`)**
+**`itemTagsView` (Optional, default: `false`)**
 
-The character or HTML tagsort will add between the tags displayed in the element referenced by displaySelector.
+Provide a selector that Tagsort will append each elements' individual tags to. Use ```false``` for no element tag display.
 
-Example Values: `/` or `·` or `<span>&</span>`
+Example Values: ```.tagged-item .tagged-item-tags``` or ```div.item-tagsort > .tags```
+
+**`itemTagsSeperator` (Optional, default: `' '`)**
+
+The character or HTML Tagsort will insert between the tags displayed in the element's tag display referenced by `displaySelector`.
+
+Example Values: ```/``` or ```·``` or ```<span>&</span>```
+
+**`itemTagsElement` (Optional, default: `false`)**
+
+Allows item tags shown to be wrapped with HTML elements instead of a seperator.
+
+Example Values: ```b``` or ```i```
 
 **`sortType` (Optional, default: `'exclusive'`)**
 
-Choose the way Tagsort will handle user tag selections and subsequent element filtering.
+Choose the way Tagsort will handle element filtering.
 
 Example Values:```exclusive``` or ```inclusive``` or ```single```
 
@@ -81,7 +100,7 @@ Example Values:```exclusive``` or ```inclusive``` or ```single```
 
 The time (in milliseconds) for elements to fade out and in as they are sorted. Use 0 for no fading.
 
-Example Values: `100` or `400`
+Example Values: ```100``` or ```400```
 
 
 ###Todo
