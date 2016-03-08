@@ -68,7 +68,7 @@ Example Values: ```li``` or ```p``` or ```a```
 
 Used to provide a prefix for the selectable tags' classes to make CSS simpler. Classes will be added as the prefix + the tagname. If false, no classes will be added.
 
-Example Values: ```false``` or `tagsort-``` or ```color-```
+Example Values: ```false``` or ```tagsort-``` or ```color-```
 
 
 **`itemTagsView` (Optional, default: `false`)**
@@ -98,7 +98,7 @@ Example Values:```exclusive``` or ```inclusive``` or ```single```
 
 **`fadeTime` (Optional, default: `200`)**
 
-The time (in milliseconds) for elements to fade out and in as they are sorted. Use 0 for no fading.
+The time (in milliseconds) for filtered elements to fade in and out. 0 removes transition entirely.
 
 Example Values: ```100``` or ```400```
 
