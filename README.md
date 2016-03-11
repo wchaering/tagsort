@@ -108,7 +108,7 @@ Example Values: ```100``` or ```400```
 ===
 **`reset` (Optional, default: `false`)**
 
-Specify an element or button that, when clicked, will return the sorted elements to their initial state by resetting all tags. No default element is used.
+Specify an element that, when clicked, will return the sorted elements to their initial state by resetting all tags. No default element is used.
 
 Example Values: ```.tagsort-reset``` or ```#button-tags-reset```
 
