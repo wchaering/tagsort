@@ -105,8 +105,16 @@ The time (in milliseconds) for filtered elements to fade in and out. 0 removes t
 
 Example Values: ```100``` or ```400```
 
+===
+**`reset` (Optional, default: `false`)**
+
+Specify an element or button that, when clicked, will return the sorted elements to their initial state by resetting all tags. No default element is used.
+
+Example Values: ```.tagsort-reset``` or ```#button-tags-reset```
+
 
 ###Todo
+* ~~Add reset functionality~~
 * Prevent exclusive filter from showing no elements
-* Clean up element display on sort (less flashing in and out)
+* ~~Clean up element display on sort (less flashing in and out)~~
 * Smoother handling of sorts where no elements match (similar to above)

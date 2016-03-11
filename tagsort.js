@@ -9,7 +9,8 @@
       itemTagsSeperator: ' ',
       itemTagsElement: false,
       sortType: 'exclusive',
-      fadeTime: 0
+      fadeTime: 0,
+      reset: false
     };
     // Overwrite defaults with any user-supplied options
     options = $.extend(defaults, options);
@@ -110,7 +111,8 @@
         tagSortEngine.container = tagsContainer;
         var elements = $(options.items),
             pointers = [],
-            display;
+            display,
+            reset = options.reset;
         // Create array of pointers to represent elements
         for(var i = 0; i < elements.length; i++){
           pointers.push(i);
@@ -143,6 +145,13 @@
           if(display[0].length > 0) tagSortEngine.hideElements(display[0], elements);
           if(display[1].length > 0) tagSortEngine.showElements(display[1], elements);
         });
+        if(reset){
+          $(reset).click(function(){
+            $('.tagsort-active').removeClass('tagsort-active');
+            display = [[],pointers.slice()];
+            tagSortEngine.showElements(display[1], elements);
+          });
+        }
       }
     }
     // Start it up
