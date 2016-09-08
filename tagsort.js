@@ -10,6 +10,7 @@
       itemTagsElement: false,
       sortType: 'exclusive',
       fadeTime: 0,
+      sortAlphabetical: false,
       reset: false
     };
     // Overwrite defaults with any user-supplied options
@@ -121,6 +122,22 @@
         tagSortEngine.tags = tagSortEngine.generateTags(elements, tagSortEngine.container);
         // Get all clickable tag elements
         var tagElement = tagSortEngine.container.find(options.tagElement);
+                
+        if(options.sortAlphabetical) {
+            // Sort values.
+            var sortedTags = tagElement.toArray().sort(function(a, b) {
+                return a.innerText > b.innerText;
+            });
+            
+            // Remove unsorted values.
+            tagSortEngine.container.empty();
+
+            // Add sorted values.
+            $.each(sortedTags, function (index, value) {
+                tagSortEngine.container.append(value);
+            });
+        }
+        
         // Handle tag click based on user options
         tagElement.click(function(){
           // Handle single filtering (inclusive sort run one tag at a time)
