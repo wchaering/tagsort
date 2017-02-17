@@ -135,7 +135,7 @@
           tagSortEngine.pointers.push(i);
         }
         // Generate tags from element data-attributes
-        tagSortEngine.tags = tagSortEngine.generateTags(tagSortEngine.lements, tagSortEngine.container);
+        tagSortEngine.tags = tagSortEngine.generateTags(tagSortEngine.elements, tagSortEngine.container);
         // Get all clickable tag elements
         tagSortEngine.tagElements = tagSortEngine.container.find(tagSortEngine.options.tagElement);
 
@@ -178,8 +178,8 @@
         if (reset) {
           $(reset).click(function() {
             tagSortEngine.container.find('.active').removeClass('active');
-            display = [[],pointers.slice()];
-            tagSortEngine.showElements(display[1], elements);
+            display = [[],tagSortEngine.pointers.slice()];
+            tagSortEngine.showElements(display[1], tagSortEngine.elements);
           });
         }
       },
