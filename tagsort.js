@@ -1,5 +1,4 @@
 ;(function($) {
-  var tagSortEngine;
   $.fn.tagSort = function(options) {
     // Default options
     var defaults = {
@@ -14,12 +13,13 @@
       fadeTime: 0,
       sortAlphabetical: false,
       reset: false,
+      tagAttr: 'data-item-tags',
       getElement: function(element){ return element; },
     };
     // Overwrite defaults with any user-supplied options
 
     // Namespace
-    tagSortEngine = {
+    var tagSortEngine = {
       generateTags: function() {
         var tags_inclusive = {},
             tags_exclusive = {pointers: [], tags: []},
@@ -29,7 +29,7 @@
         tagSortEngine.elements.each(function(i) {
           $element = $(this);
           // Pull tags from element data attribute and dump into array
-          var tagsData = $element.attr('data-item-tags')
+          var tagsData = $element.attr(tagSortEngine.options.tagAttr);
           tagsData = (typeof tagsData === 'string' && tagsData !== '') ?  tagsData : 'Untagged';
           var elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
             // Inclusive Filtering only: Loop through each element's tags
