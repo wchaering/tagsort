@@ -41,10 +41,22 @@ $('div.tagsort-tags-container').tagSort({
   itemTagsSeperator: ' ',
   itemTagsElement: false,
   sortType: 'exclusive',
+  tagAttr: 'data-item-tags',
   fadeTime: 0
 });
 ```
 
+JavaScript for Mutiple tagsorts in the same page
+```javascript
+$().ready(function() {
+    $('div.tagsort-tags-container').each(function() {
+        $(this).tagSort({
+            items: '.item-to-filter',
+            tagAttr: this.getAttribute("tagname") || "data-item-tags"
+        });
+    });
+});
+```
 
 ###Options:
 Tagsort can be used simply by passing in a sort item selector but it also offers some extra options for added functionality.
