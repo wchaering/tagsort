@@ -112,6 +112,13 @@ Specify an element that, when clicked, will return the sorted elements to their 
 
 Example Values: ```.tagsort-reset``` or ```#button-tags-reset```
 
+===
+**`tagAttr` (Optional, default: `data-item-tags`)**
+
+Specify the attribute name that is used to retrieve the list of tags on each element. This allows to have several filters on the same set of elements.
+
+Example Values: ```data-item-tags```
+
 
 ###Todo
 * ~~Add reset functionality~~
