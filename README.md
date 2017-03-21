@@ -4,11 +4,11 @@ A plugin that uses HTML5 data attributes to dynamically create interactive tags 
 Demos and docs for the plugin are avaliable [here](http://wch.io/projects/tagsort/ "Tagsort Demo").
 
 
-###Description
+### Description
 Tagsort takes a set of tagged elements allows them to be filtered in a number of ways. The set of tags is appended to an element and can be selected to inclusively or exclusively show matching elements. Inclusive filtering will show all elements that have any of the selected tags. Exclusive filtering will only show elements that have all of the selected tags. Single filtering will only allow one tag at a time to be selected and show the elements that match that tag.
 
 
-###Basic Usage
+### Basic Usage
 Tagsort uses a user-defined data-attribute containing a comma-separated list of tags to tag each element. The data attribute used is `data-item-tags=""` and must be added to each element to be filtered.
 
 
@@ -46,7 +46,7 @@ $('div.tagsort-tags-container').tagSort({
 ```
 
 
-###Options:
+### Options:
 Tagsort can be used simply by passing in a sort item selector but it also offers some extra options for added functionality.
 
 
@@ -111,10 +111,3 @@ Example Values: ```100``` or ```400```
 Specify an element that, when clicked, will return the sorted elements to their initial state by resetting all tags. No default element is used.
 
 Example Values: ```.tagsort-reset``` or ```#button-tags-reset```
-
-
-###Todo
-* ~~Add reset functionality~~
-* Prevent exclusive filter from showing no elements
-* ~~Clean up element display on sort (less flashing in and out)~~
-* Smoother handling of sorts where no elements match (similar to above)
