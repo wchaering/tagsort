@@ -16,6 +16,8 @@
       tagAttr: 'data-item-tags',
       tagDelimiter: ',',
       getElement: function(element){ return element; },
+      tagClickFunc: function(){},
+      callback: function(){}
     };
     // Overwrite defaults with any user-supplied options
 
@@ -169,7 +171,6 @@
             else {
               tagSortEngine.container.find('.active').removeClass('active');
               $(this).addClass('active');
-
             }
           }
           // Handle inclusive or exclusive filtering
@@ -177,7 +178,9 @@
             $(this).toggleClass('active');
           }
           tagSortEngine.sort();
-
+	  // If any click action is needed by user, call that option here
+	  if($.isFunction(tagSortEngine.options.tagClickFunc))
+		  tagSortEngine.options.tagClickFunc.call(this);
         });
         if (reset) {
           $(reset).click(function() {
@@ -202,7 +205,21 @@
         // Show/hide tagged elements
         if (tagSortEngine.display[0].length > 0) tagSortEngine.hideElements(tagSortEngine.display[0], tagSortEngine.elements);
         if (tagSortEngine.display[1].length > 0) tagSortEngine.showElements(tagSortEngine.display[1], tagSortEngine.elements);
-      }
+      },
+      runCallback: function(tagsContainer){
+	if($.isFunction(tagSortEngine.options.callback))
+	   tagSortEngine.options.callback.call(tagsContainer);
+      },
+      completeReset: function(tagsContainer, selectedTags){
+	tagSortEngine.initialize(tagsContainer);
+	/*if(selectedTags!=null){
+	    tagSortEngine.tagElements.each(function(){
+		if(selectedTags.includes($(this).attr("value")))
+		$(this).addClass('active');
+	    });
+	  }*/
+	tagSortEngine.runCallback(tagsContainer);
+      }  
     }
 
     // Start it up
