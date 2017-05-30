@@ -14,6 +14,7 @@
       sortAlphabetical: false,
       reset: false,
       tagAttr: 'data-item-tags',
+      tagDelimiter: ',',
       getElement: function(element){ return element; },
     };
     // Overwrite defaults with any user-supplied options
@@ -30,8 +31,11 @@
           $element = $(this);
           // Pull tags from element data attribute and dump into array
           var tagsData = $element.attr(tagSortEngine.options.tagAttr);
+          var tagDelimiter = tagSortEngine.options.tagsDelimiter;
           tagsData = (typeof tagsData === 'string' && tagsData !== '') ?  tagsData : 'Untagged';
-          var elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
+          //var elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
+          var re = new RegExp("\\s*[\\"+tagDelimiter+"]+\\s*","gi");
+		      var elementTags = tagsData.split(re);
             // Inclusive Filtering only: Loop through each element's tags
             $.each(elementTags, function(key, v) {
               var tagName = v;
