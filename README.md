@@ -41,10 +41,22 @@ $('div.tagsort-tags-container').tagSort({
   itemTagsSeperator: ' ',
   itemTagsElement: false,
   sortType: 'exclusive',
+  tagAttr: 'data-item-tags',
   fadeTime: 0
 });
 ```
 
+JavaScript for Mutiple tagsorts in the same page
+```javascript
+$().ready(function() {
+    $('div.tagsort-tags-container').each(function() {
+        $(this).tagSort({
+            items: '.item-to-filter',
+            tagAttr: this.getAttribute("tagname") || "data-item-tags"
+        });
+    });
+});
+```
 
 ### Options:
 Tagsort can be used simply by passing in a sort item selector but it also offers some extra options for added functionality.
@@ -111,3 +123,9 @@ Example Values: ```100``` or ```400```
 Specify an element that, when clicked, will return the sorted elements to their initial state by resetting all tags. No default element is used.
 
 Example Values: ```.tagsort-reset``` or ```#button-tags-reset```
+
+**`tagAttr` (Optional, default: `data-item-tags`)**
+
+Specify the attribute name that is used to retrieve the list of tags on each element. This allows to have several filters on the same set of elements.
+
+Example Values: ```data-item-tags```

@@ -1,5 +1,4 @@
 ;(function($) {
-  var tagSortEngine;
   $.fn.tagSort = function(options) {
     // Default options
     var defaults = {
@@ -14,12 +13,16 @@
       fadeTime: 0,
       sortAlphabetical: false,
       reset: false,
+      tagAttr: 'data-item-tags',
+      tagDelimiter: ',',
       getElement: function(element){ return element; },
+      tagClickFunc: function(){},
+      callback: function(){}
     };
     // Overwrite defaults with any user-supplied options
 
     // Namespace
-    tagSortEngine = {
+    var tagSortEngine = {
       generateTags: function() {
         var tags_inclusive = {},
             tags_exclusive = {pointers: [], tags: []},
@@ -29,9 +32,12 @@
         tagSortEngine.elements.each(function(i) {
           $element = $(this);
           // Pull tags from element data attribute and dump into array
-          var tagsData = $element.attr('data-item-tags')
+          var tagsData = $element.attr(tagSortEngine.options.tagAttr);
+          var tagDelimiter = tagSortEngine.options.tagsDelimiter;
           tagsData = (typeof tagsData === 'string' && tagsData !== '') ?  tagsData : 'Untagged';
-          var elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
+          //var elementTags = tagsData.match(/,\s+/) ? tagsData.split(', ') : tagsData.split(',');
+          var re = new RegExp("\\s*[\\"+tagDelimiter+"]+\\s*","gi");
+		      var elementTags = tagsData.split(re);
             // Inclusive Filtering only: Loop through each element's tags
             $.each(elementTags, function(key, v) {
               var tagName = v;
@@ -135,7 +141,7 @@
           tagSortEngine.pointers.push(i);
         }
         // Generate tags from element data-attributes
-        tagSortEngine.tags = tagSortEngine.generateTags(tagSortEngine.lements, tagSortEngine.container);
+        tagSortEngine.tags = tagSortEngine.generateTags(tagSortEngine.elements, tagSortEngine.container);
         // Get all clickable tag elements
         tagSortEngine.tagElements = tagSortEngine.container.find(tagSortEngine.options.tagElement);
 
@@ -165,7 +171,6 @@
             else {
               tagSortEngine.container.find('.active').removeClass('active');
               $(this).addClass('active');
-
             }
           }
           // Handle inclusive or exclusive filtering
@@ -173,13 +178,15 @@
             $(this).toggleClass('active');
           }
           tagSortEngine.sort();
-
+	  // If any click action is needed by user, call that option here
+	  if($.isFunction(tagSortEngine.options.tagClickFunc))
+		  tagSortEngine.options.tagClickFunc.call(this);
         });
         if (reset) {
           $(reset).click(function() {
             tagSortEngine.container.find('.active').removeClass('active');
-            display = [[],pointers.slice()];
-            tagSortEngine.showElements(display[1], elements);
+            display = [[],tagSortEngine.pointers.slice()];
+            tagSortEngine.showElements(display[1], tagSortEngine.elements);
           });
         }
       },
@@ -198,7 +205,21 @@
         // Show/hide tagged elements
         if (tagSortEngine.display[0].length > 0) tagSortEngine.hideElements(tagSortEngine.display[0], tagSortEngine.elements);
         if (tagSortEngine.display[1].length > 0) tagSortEngine.showElements(tagSortEngine.display[1], tagSortEngine.elements);
-      }
+      },
+      runCallback: function(tagsContainer){
+	if($.isFunction(tagSortEngine.options.callback))
+	   tagSortEngine.options.callback.call(tagsContainer);
+      },
+      completeReset: function(tagsContainer, selectedTags){
+	tagSortEngine.initialize(tagsContainer);
+	/*if(selectedTags!=null){
+	    tagSortEngine.tagElements.each(function(){
+		if(selectedTags.includes($(this).attr("value")))
+		$(this).addClass('active');
+	    });
+	  }*/
+	tagSortEngine.runCallback(tagsContainer);
+      }  
     }
 
     // Start it up
